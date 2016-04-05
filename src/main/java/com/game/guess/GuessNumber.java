@@ -31,6 +31,7 @@ public class GuessNumber {
 	/** The current number. */
 	private static Integer currentNumber = null;
 
+	private static Random randomGenerator =null;
 	/**
 	 * The main method.
 	 * 
@@ -38,6 +39,7 @@ public class GuessNumber {
 	 */
 	public static void main(final String[] args) {
 
+		randomGenerator =new Random();
 		Scanner scanner = null;
 		try {
 
@@ -130,16 +132,16 @@ public class GuessNumber {
 	 */
 	private static Integer getNextNumber() {
 		if (RANGE_TOP == null && RANGE_BOTTOM == null) {
-			return new Random(1000).nextInt();
+			return randomGenerator.nextInt(10000);
 		} else if (RANGE_TOP == null) {
 			if (RANGE_BOTTOM == 0) {
-				return RANGE_BOTTOM + Math.abs(new Random(1000).nextInt());
+				return RANGE_BOTTOM + Math.abs(randomGenerator.nextInt(10000));
 			} else {
 				return RANGE_BOTTOM + Math.abs(RANGE_BOTTOM);
 			}
 		} else if (RANGE_BOTTOM == null) {
 			if (RANGE_TOP == 0) {
-				return -Math.abs(new Random(1000).nextInt());
+				return -Math.abs(randomGenerator.nextInt(10000));
 			} else {
 				return RANGE_TOP - Math.abs(RANGE_TOP);
 			}

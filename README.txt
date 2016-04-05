@@ -2,6 +2,8 @@ Needs JAVA8 and maven >3.0.5
 
 To execute run guessNumberGame script. which builds and run junit tests and also allows you play
 
+or  mvn clean package  , java -jar target\GuessNumberGame-0.0.1-SNAPSHOT.jar
+
 
 
 The game works as follows: 
